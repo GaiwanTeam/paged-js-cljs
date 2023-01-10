@@ -1,0 +1,8 @@
+@media print {
+  * {
+    font-family: sans-serif;
+  }
+  @page {
+    size: A4 landscape;
+  }
+}

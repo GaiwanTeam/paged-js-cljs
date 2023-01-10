@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(230, 229, 172);
+}
+
+#preview {
+  transform: scale(0.5);
+  transform-origin: top left;
+}
+
+#preview .pagedjs_pages {
+  margin: 0;
+}
+
+@media screen {
+  #book {
+    display: none;
+  }
+}
+
+:root {
+	--pagedjs-width: 8.5in;
+	--pagedjs-height: 11in;
+	--pagedjs-width-right: 8.5in;
+	--pagedjs-height-right: 11in;
+	--pagedjs-width-left: 8.5in;
+	--pagedjs-height-left: 11in;
+	--pagedjs-pagebox-width: 8.5in;
+	--pagedjs-pagebox-height: 11in;
+	--pagedjs-footnotes-height: 0mm;
+	--pagedjs-margin-top: 1in;
+	--pagedjs-margin-right: 1in;
+	--pagedjs-margin-bottom: 1in;
+	--pagedjs-margin-left: 1in;
+	--pagedjs-padding-top: 0mm;
+	--pagedjs-padding-right: 0mm;
+	--pagedjs-padding-bottom: 0mm;
+	--pagedjs-padding-left: 0mm;
+	--pagedjs-border-top: 0mm;
+	--pagedjs-border-right: 0mm;
+	--pagedjs-border-bottom: 0mm;
+	--pagedjs-border-left: 0mm;
+	--pagedjs-bleed-top: 0mm;
+	--pagedjs-bleed-right: 0mm;
+	--pagedjs-bleed-bottom: 0mm;
+	--pagedjs-bleed-left: 0mm;
+	--pagedjs-bleed-right-top: 0mm;
+	--pagedjs-bleed-right-right: 0mm;
+	--pagedjs-bleed-right-bottom: 0mm;
+	--pagedjs-bleed-right-left: 0mm;
+	--pagedjs-bleed-left-top: 0mm;
+	--pagedjs-bleed-left-right: 0mm;
+	--pagedjs-bleed-left-bottom: 0mm;
+	--pagedjs-bleed-left-left: 0mm;
+	--pagedjs-crop-color: black;
+	--pagedjs-crop-shadow: white;
+	--pagedjs-crop-offset: 2mm;
+	--pagedjs-crop-stroke: 1px;
+	--pagedjs-cross-size: 5mm;
+	--pagedjs-mark-cross-display: none;
+	--pagedjs-mark-crop-display: none;
+	--pagedjs-page-count: 0;
+	--pagedjs-page-counter-increment: 1;
+	--pagedjs-footnotes-count: 0;
+	--pagedjs-column-gap-offset: 1000px;
+}

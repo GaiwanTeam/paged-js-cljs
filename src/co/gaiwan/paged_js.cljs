@@ -3,30 +3,50 @@
    ["pagedjs" :refer [Previewer]]
    ["react-dom/client" :refer [createRoot]]
    ["react" :as react]
-   [reagent.core :as r]))
+   [reagent.core :as reagent]))
 
 (defonce root (createRoot
                (js/document.getElementById "app")))
 
+(defonce state (reagent/atom {:count 25}))
+
 (defn book []
-  [:div [:h1 "I'm a book"]])
+  [:div#book
+   [:table
+    [:thead
+     [:tr
+      [:th "Head1"] [:th "Head2"]]]
+    [:tbody
+     (repeat
+      100
+      [:tr
+       [:td "item"] [:td "100"]])]]
+   ])
+
+(defonce paged-js (Previewer.))
 
 (defn app []
-  (react/useLayoutEffect
-   (fn []
-     (let [previewer (Previewer.)]
-       (.preview previewer
-                 (.-innerHTML (js/document.querySelector "#app"))
-                 #js []
-                 (js/document.querySelector "#preview"))))
-   #js [])
-  [book])
+  ;; (react/useLayoutEffect
+  ;;  (fn []
+  ;;    (js/console.log "HERE")
+  ;;    (.preview paged-js
+  ;;              (.-innerHTML (js/document.querySelector "#book"))
+  ;;              #js ["print_styles.css"]
+  ;;              (js/document.querySelector "#preview"))
+  ;;    (fn cleanup []
+  ;;      (.. paged-js polisher destroy)
+  ;;      (.. paged-js removeStyles)))
+  ;;  #js [])
+  [:div
+   [book]
+   [:input {:on-change #(swap! state assoc :count (js/parseInt (.. % -target -value)))
+            :value (str (:count @state))}]])
 #_
 (rdom/render [app]
              (js/document.getElementById "app"))
 (defn init
   []
-  (.render root (r/as-element [:f> app])))
+  (.render root (reagent/as-element [:f> app])))
 
 (defn ^:dev/after-load re-render
   []
