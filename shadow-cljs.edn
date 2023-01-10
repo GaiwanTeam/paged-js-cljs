@@ -1,0 +1,22 @@
+{:deps
+ {:aliases [:dev]}
+
+ :dev-http {6543 {:roots ["classpath:public"]}}
+
+ :builds
+ {:paged-js-test
+  {:target     :browser
+   :modules    {:main {:entries [co.gaiwan.paged-js]}}
+   :output-dir "resources/public/ui"
+   :asset-path "/ui"
+   :devtools
+   {:repl-pprint true
+    :infer-externs :auto
+    :warnings-as-errors #{:undeclared-var}}
+   :release
+   {:closure-defines
+    {goog.DEBUG false
+     goog.debug.LOGGING_ENABLED true}}
+   #_#_ :build-hooks [(co.gaiwan.paged-js/write-styles-hook)]}}
+
+ :cache-blockers #{lambdaisland.ornament}}
